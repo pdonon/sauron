@@ -22,8 +22,8 @@ export default class Item {
     }
 
     static fetch(marketId, id) {
-        const endpoint = `${mockServer}/items/market/${marketId} /product/ ${id}`
-        return fetch(endpoint)
+        //endpoint = `${mockServer}/track/market/${marketId}/product/${id}`
+        return fetch(`https://63219be1-0f45-41e6-99fe-d8e89cc28af5.mock.pstmn.io/track/market/${marketId}/product/${id}`)
             .then(pipeResponse)
             .then(res => res.json())
     }
