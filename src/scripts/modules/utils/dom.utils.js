@@ -70,16 +70,16 @@ function htmlToElement(html) {
 
 function toggleCanvas(canvas) {
   const display = canvas.style.display === "none" ? "block" : "none";
-  canvas.style.display = "block";
+  canvas.style.display = display;
   return display;
 }
 
 function addToggleBtnBehavior(toggleBtn, canvas, itemsCount) {
   const showHtml = `<span class="andes-button__content">
-        Ver grafico (${itemsCount})
+        See price history (${itemsCount})
     </span>`;
   const hideHtml = `<span class="andes-button__content">
-        Esconder grafico
+        Hide price history
     </span>`;
   toggleBtn.innerHTML = showHtml;
   toggleBtn.addEventListener("click", () => {

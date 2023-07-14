@@ -47,7 +47,7 @@ export default class Item {
     }
 
     get endpoint() {
-        return `https://api.mercadolibre.com/items/${this.market || 'MLA'}${this.id}`;
+        return `https://browserapi.manomano.fr/web/api/v1/product-page/product-cards/fr?product_ids=${this.id}`;
     }
 
 }
