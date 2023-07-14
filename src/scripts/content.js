@@ -3,7 +3,8 @@ import Storage from './modules/storage'
 import Graph from './modules/graph'
 import DomUtils from './modules/utils/dom.utils'
 
-const [marketId, itemId] = getIdsFromUrl(window.location.pathname)
+const marketId = "FR"
+const itemId = getProductIdFromUrl(window.location.pathname);
 const $chartSiblin = DomUtils.getChartSiblin();
 
 setTimeout(() => {
@@ -49,8 +50,7 @@ function saveAndGraph(item) {
         .then(() => Graph.show({ item, elem: $chartSiblin, itemId, marketId }))
 }
 
-function getIdsFromUrl(url) {
+function getProductIdFromUrl(url) {
     return url
-        .split('-')
-        .map(id => id.replace(/\W/g, ''))
+        .split('-').pop();
 }

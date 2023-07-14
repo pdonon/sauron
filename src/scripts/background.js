@@ -2,7 +2,7 @@ import Storage from "./modules/storage";
 
 function getItem(market, id) {
   return fetch(
-    `https://api.mercadolibre.com/items/${market || "MLA"}${id}`
+    `https://api.manomano.com/track/market/${market}/product/${id}`
   ).then(function (res) {
     return res.json();
   });

@@ -20,7 +20,7 @@ export default class Item {
     }
 
     static fetch(marketId, id) {
-        const endpoint = `https://api.mercadolibre.com/items/${marketId || 'MLA'}${id}`
+        const endpoint = `https://api.manomano.com/items/market/${marketId} /product/ ${id}`
         return fetch(endpoint)
             .then(pipeResponse)
             .then(res => res.json())

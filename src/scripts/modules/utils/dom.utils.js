@@ -18,16 +18,14 @@ const trackBtnHtml = `
 `;
 
 /* TODO: move to constants module along with all strings in the app */
-const githubIssuesUrl = "https://github.com/GMaiolo/mercado-track/issues";
-const FATAL_ERROR = `[MercadoTrack] La extensión no puede funcionar debido a un cambio de diseño por parte del equipo de MercadoLibre.
-Por favor contactate con los desarrolladores a través de un issue en GitHub: ${githubIssuesUrl}`;
+const githubIssuesUrl = "https://github.com/pdonon/sauron/issues";
+const FATAL_ERROR = `[Sauron] Sauron extension failed due to a change in ManoMano website.
+Please open an issue in GitHub: ${githubIssuesUrl}`;
 
 export default {
   getChartSiblin() {
-    const shortDescription = document.getElementById("shortDescription");
-    const productGalleryCollection = document.getElementById(
-      "productGalleryCollection"
-    );
+    const shortDescription = document.querySelector("h1");
+    const productGalleryCollection = document.querySelector(".fw0tta");
     const productContainer = document.querySelector(
       ".ui-pdp-container__row.ui-pdp-container__row--gallery"
     );
@@ -45,17 +43,17 @@ export default {
   },
 
   createTrackBtn() {
-    const container = htmlToElement(trackBtnHtml);
+    const container = htmlToElement(trackBtnHtml).parentNode;
     const trackBtn = container.querySelector("#mt-track");
     return { container, trackBtn };
   },
 
   createGoToMTLink(marketId, itemId) {
     const link = document.createElement("a");
-    const linkText = document.createTextNode("Ver en MercadoTrack");
+    const linkText = document.createTextNode("Ver en Sauron");
     link.setAttribute(
       "href",
-      `https://mercadotrack.com/articulo/${marketId}${itemId}`
+      `https://manomano-hack.com/articulo/${marketId}${itemId}`
     );
     link.setAttribute("style", "margin: auto 15px;");
     link.setAttribute("target", "_blank");
@@ -72,7 +70,7 @@ function htmlToElement(html) {
 
 function toggleCanvas(canvas) {
   const display = canvas.style.display === "none" ? "block" : "none";
-  canvas.style.display = display;
+  canvas.style.display = "block";
   return display;
 }
 
