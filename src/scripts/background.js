@@ -1,8 +1,9 @@
 import Storage from "./modules/storage";
+const mockServer = "https://63219be1-0f45-41e6-99fe-d8e89cc28af5.mock.pstmn.io"
 
 function getItem(market, id) {
   return fetch(
-    `https://api.manomano.com/track/market/${market}/product/${id}`
+    `${mockServer}/track/market/${market}/product/${id}`
   ).then(function (res) {
     return res.json();
   });

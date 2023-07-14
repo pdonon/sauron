@@ -43,7 +43,7 @@ export default {
   },
 
   createTrackBtn() {
-    const container = htmlToElement(trackBtnHtml).parentNode;
+    const container = htmlToElement(trackBtnHtml);
     const trackBtn = container.querySelector("#mt-track");
     return { container, trackBtn };
   },
@@ -53,7 +53,7 @@ export default {
     const linkText = document.createTextNode("Ver en Sauron");
     link.setAttribute(
       "href",
-      `https://manomano-hack.com/articulo/${marketId}${itemId}`
+      `https://manomano-hack.com/product/${marketId}${itemId}`
     );
     link.setAttribute("style", "margin: auto 15px;");
     link.setAttribute("target", "_blank");
@@ -65,7 +65,7 @@ export default {
 function htmlToElement(html) {
   let template = document.createElement("template");
   template.innerHTML = html;
-  return template.content.firstChild;
+  return template.content.firstChild.parentNode;
 }
 
 function toggleCanvas(canvas) {

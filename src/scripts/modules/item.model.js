@@ -2,6 +2,8 @@ import Utils from './utils/utils'
 
 export default class Item {
 
+    mockServer = "https://63219be1-0f45-41e6-99fe-d8e89cc28af5.mock.pstmn.io"
+
     /* id may be numbers only (when item is coming from localStorage/URL) 
     or "/MMM99999999" format when it's coming from the API
     we need documentation but I regret nothing */
@@ -20,7 +22,7 @@ export default class Item {
     }
 
     static fetch(marketId, id) {
-        const endpoint = `https://api.manomano.com/items/market/${marketId} /product/ ${id}`
+        const endpoint = `${mockServer}/items/market/${marketId} /product/ ${id}`
         return fetch(endpoint)
             .then(pipeResponse)
             .then(res => res.json())
