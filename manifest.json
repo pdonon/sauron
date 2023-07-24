@@ -16,21 +16,19 @@
     "service_worker": "scripts/background.bundle.js"
   },
   "host_permissions": [
-    "*://*.manomano.fr/*",
-    "*://*.manomano.com/*",
-    "*://*.manomano.es/*",
-    "*://*.manomano.it/*",
-    "*://*.manomano.uk/*"
+    "*://*.manomano.fr*/p/*",
+    "*://*.manomano.es*/p/*",
+    "*://*.manomano.it*/p/*",
+    "*://*.manomano.uk*/p/*"
   ],
   "content_scripts": [
     {
       "js": ["scripts/content.bundle.js"],
       "matches": [
-        "*://*.manomano.fr/*",
-        "*://*.manomano.com/*",
-        "*://*.manomano.es/*",
-        "*://*.manomano.it/*",
-        "*://*.manomano.uk/*"
+        "*://*.manomano.fr*/p/*",
+        "*://*.manomano.es*/p/*",
+        "*://*.manomano.it*/p/*",
+        "*://*.manomano.uk*/p/*"
       ],
       "run_at": "document_end"
     }
